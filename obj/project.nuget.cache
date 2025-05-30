@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "n4nnZpgR/Co=",
+  "success": true,
+  "projectFilePath": "/home/ali/Programming/UserManagementAPI/UserManagementAPI.csproj",
+  "expectedPackageFiles": [
+    "/home/ali/.nuget/packages/microsoft.aspnetcore.openapi/9.0.5/microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
+    "/home/ali/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

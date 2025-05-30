@@ -1,0 +1,104 @@
+# Get all users (with pagination)
+GET http://localhost:5173/api/users?page=1&pageSize=5
+Authorization: Bearer my-secret-token
+
+###
+
+# Get a specific user by ID (valid ID)
+GET http://localhost:5173/api/users/1
+Authorization: Bearer my-secret-token
+
+###
+
+# Get a specific user by ID (non-existent ID)
+GET http://localhost:5173/api/users/999
+Authorization: Bearer my-secret-token
+
+###
+
+# Create a new user (valid request)
+POST http://localhost:5173/api/users
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+
+{
+    "name": "Charlie",
+    "email": "charlie@example.com"
+}
+
+###
+
+# Create a new user (invalid request - missing name)
+POST http://localhost:5173/api/users
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+
+{
+    "name": "",
+    "email": "charlie@example.com"
+}
+
+###
+
+# Create a new user (invalid request - bad email)
+POST http://localhost:5173/api/users
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+
+{
+    "name": "Charlie",
+    "email": "notanemail"
+}
+
+###
+
+# Update an existing user (valid request)
+PUT http://localhost:5173/api/users/1
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+
+{
+    "name": "Alice Updated",
+    "email": "alice.updated@example.com"
+}
+
+###
+
+# Update an existing user (invalid request - missing name)
+PUT http://localhost:5173/api/users/1
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+
+{
+    "name": "",
+    "email": "alice.updated@example.com"
+}
+
+###
+
+# Update an existing user (non-existent ID)
+PUT http://localhost:5173/api/users/999
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+
+{
+    "name": "Ghost User",
+    "email": "ghost@example.com"
+}
+
+###
+
+# Delete a user by ID (valid ID)
+DELETE http://localhost:5173/api/users/2
+Authorization: Bearer my-secret-token
+
+###
+
+# Delete a user by ID (non-existent ID)
+DELETE http://localhost:5173/api/users/999
+Authorization: Bearer my-secret-token
+
+###
+
+# Unauthorized request (Missing or incorrect token)
+GET http://localhost:5173/api/users
